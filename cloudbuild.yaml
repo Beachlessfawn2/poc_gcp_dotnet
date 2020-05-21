@@ -5,4 +5,4 @@ steps:
 artifacts:
   objects:
     location: 'gs://net-demo-output-bucket/target/'
-    paths: ['./bin/Release/netcoreapp2.1/publish']
+    paths: ['./bin/Release/netcoreapp3.1/publish']
