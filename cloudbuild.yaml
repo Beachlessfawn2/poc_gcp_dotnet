@@ -1,7 +1,7 @@
 steps:
 - name: 'mcr.microsoft.com/dotnet/core/sdk:3.1'
   entrypoint: 'dotnet'
-  args: [ 'publish', '-c', 'Release' ]
+  args: [ 'publish', '-c', 'Release', '-r', 'win-x64' ]
 artifacts:
   objects:
     location: 'gs://net-demo-output-bucket/target/'
