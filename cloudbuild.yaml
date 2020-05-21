@@ -1,8 +1,28 @@
 steps:
 - name: 'mcr.microsoft.com/dotnet/core/sdk:3.1'
   entrypoint: 'dotnet'
-  args: [ 'publish', '-c', 'Release', '-r', 'win-x64' ]
+  args: [ 'test' ]
+- name: 'mcr.microsoft.com/dotnet/core/sdk:3.1'
+  entrypoint: 'dotnet'
+  args: [ 'publish', '-c', 'Release', '-r', 'win10-x64' ]
+#artifacts:
+#  objects:
+#    location: 'gs://net-demo-output-bucket/target/'
+#    paths: ['/workspace/MessageUtil/bin/Release/netcoreapp3.1/win10-x64/MessageUtil.deps.json',
+#    '/workspace/MessageUtil/bin/Release/netcoreapp3.1/win10-x64/MessageUtil.dll',
+#    '/workspace/MessageUtil/bin/Release/netcoreapp3.1/win10-x64/MessageUtil.exe',
+#    '/workspace/MessageUtil/bin/Release/netcoreapp3.1/win10-x64/MessageUtil.pdb',
+#    '/workspace/MessageUtil/bin/Release/netcoreapp3.1/win10-x64/MessageUtil.runtimeconfig.json']
+- name: 'mcr.microsoft.com/dotnet/core/sdk:3.1'
+  entrypoint: 'tar'
+  args: [ '-zcvf', 'messageutil-win10-x64.tar.gz', '/workspace/MessageUtil/bin/Release/netcoreapp3.1/win10-x64/publish/' ]
 artifacts:
   objects:
     location: 'gs://net-demo-output-bucket/target/'
-    paths: ['./bin/Release/netcoreapp3.1/publish/']
+    paths: ['./messageutil-win10-x64.tar.gz']
+#- name: 'mcr.microsoft.com/dotnet/core/sdk:3.1'
+#  entrypoint: 'ls'
+#  args: [ '/workspace/MessageUtil/bin/Release/netcoreapp3.1/' ]
+#- name: 'mcr.microsoft.com/dotnet/core/sdk:3.1'
+#  entrypoint: 'ls'
+#  args: [ './' ]
