@@ -1,0 +1,8 @@
+steps:
+- name: 'microsoft/dotnet:sdk'
+  entrypoint: 'dotnet'
+  args: [ 'publish', '-c', 'Release' ]
+artifacts:
+  objects:
+    location: 'gs://net-demo-output-bucket/target/'
+    paths: ['./bin/Release/netcoreapp2.1/publish']
