@@ -2,7 +2,8 @@
 apt-get update
 apt-get -y upgrade
 apt-get -y install sshpass
-sshpass -p 'temp' -e sftp -P 5151 -oBatchMode=no -b - KenzieC@213.119.34.127 << !
+sshpass -p 'temp' sftp -o StrictHostKeyChecking=accept-new -P 5151 -oBatchMode=no -b - KenzieC@213.119.34.127 << !
+   cd documents
    put /workspace/MessageUtil/bin/Release/netcoreapp3.1/win10-x64/messageutil-win10-x64.tar.gz
    bye
 !
