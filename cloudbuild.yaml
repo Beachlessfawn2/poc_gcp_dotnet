@@ -9,10 +9,13 @@ steps:
 - name: 'mcr.microsoft.com/dotnet/core/sdk:3.1'
   entrypoint: 'bash'
   args: [ './tarring.sh' ]
-artifacts:
-  objects:
-    location: 'gs://net-demo-output-bucket/'
-    paths: ['/workspace/MessageUtil/bin/Release/netcoreapp3.1/win10-x64/messageutil-win10-x64.tar.gz']
+#artifacts:
+#  objects:
+#    location: 'gs://net-demo-output-bucket/'
+#    paths: ['/workspace/MessageUtil/bin/Release/netcoreapp3.1/win10-x64/messageutil-win10-x64.tar.gz']
+- name: 'ubuntu'
+  entrypoint: 'ls'
+  args: [ '-la' ]
 #- name: 'mcr.microsoft.com/dotnet/core/sdk:3.1'
 #  entrypoint: 'ls'
 #  args: [ '/workspace/MessageUtil/bin/Release/netcoreapp3.1/' ]
