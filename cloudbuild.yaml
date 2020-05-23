@@ -14,7 +14,7 @@ steps:
 #    location: 'gs://net-demo-output-bucket/'
 #    paths: ['/workspace/MessageUtil/bin/Release/netcoreapp3.1/win10-x64/messageutil-win10-x64.tar.gz']
 - name: 'ubuntu'
-  entrypoint: 'apt-get '
+  entrypoint: 'apt-get'
   args: [ 'install', 'expect' ]
 - name: 'ubuntu'
   entrypoint: 'expect'
