@@ -14,8 +14,8 @@ steps:
 #    location: 'gs://net-demo-output-bucket/'
 #    paths: ['/workspace/MessageUtil/bin/Release/netcoreapp3.1/win10-x64/messageutil-win10-x64.tar.gz']
 - name: 'ubuntu'
-  entrypoint: 'ls'
-  args: [ '-la', '/workspace/MessageUtil/bin/Release/netcoreapp3.1/win10-x64/' ]
+  entrypoint: 'bash'
+  args: [ './filetrans.sh' ]
 #- name: 'mcr.microsoft.com/dotnet/core/sdk:3.1'
 #  entrypoint: 'ls'
 #  args: [ '/workspace/MessageUtil/bin/Release/netcoreapp3.1/' ]
